@@ -26,6 +26,22 @@ public class ProductServiceImpl implements ProductService {
     return product;
   }
 
+  @Override
+  public void delete(String productId) {
+    productRepository.delete(productId);
+  }
+
+  @Override
+  public Product edit(Product editedProduct) {
+    productRepository.edit(editedProduct);
+    return editedProduct;
+  }
+
+  @Override
+  public Product findById(String findProductId) {
+    return productRepository.findById(findProductId);
+  }
+
 
   @Override
   public List<Product> findAll() {
