@@ -1,26 +1,28 @@
-# Getting Started
+<details>
+<summary>Tutorial 1</summary>
+## Reflection 1
+'''
+pada pengembangan fitur saya sudah menerapkan standarisasi clean code mulai dari menggunakan 
+nama variabel dan metode yag deskriptif, memecah kode menjadi komponen modular dan menerapkan 
+fungsionalitas sesuai kebutuhan, tidak melakukan duplikasi kode dan mengunakan format yang konsisten.
 
-### Reference Documentation
-For further reference, please consider the following sections:
+Namun pada saat pengembangan fitur delete thymeleaf saya tidak bisa mendeteksi metode DELETE  sehingga saya 
+menambahkan konfigurasi **spring.mvc.hiddenmethod.filter.enabled=true** pada berkas **application.properties**
+agar fitur tersebut dapat berfungsi dengan baik.
+'''
+## Reflection 2
+'''
+Setelah menulis unit test, saya merasa kode saya menjadi berfungsi sesuai dengan bagaimana mestinya kode tersebut
+harus berjalan karena saya bisa mengetahui bug tersebut secara lebih awal dan dapat memperbaikinya sebelum error-error
+yang lain.Namun, saya merasa bahwa tidak ada jumlah exact untuk banyak unit test yang harus dibuat untuk satu kelas, 
+Namun, berdasarkan literatur yang saya baca bahwa sekitar 80% dari kode seharusnya tercakup oleh unit test. selain itu, 
+Agar unit test cukup untuk mengecheck fungsionallitas fiturnya saya perlu menguji semua fitur dalam program sehingga tidak ada kasus yang tidak tertangani. 
+Meskipun mencapai 100% code coverage memberikan suatu keyakinan pada code bahwa sudah benar, hal itu tidak menjamin bahwa kode kita bebas dari bug atau kesalahan.
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.2/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.2.2/gradle-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#using.devtools)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#appendix.configuration-metadata.annotation-processor)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#web)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#web.servlet.spring-mvc.template-engines)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-
-### Additional Links
-These additional references should also help you:
-
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+Setelah saya meninjau kode dari file **CreateProductFunctionalTest.java** saya menyadari bahwa masih terdapat kode yang tidak
+menerapkan prinsip clean code karena kesamaan pengujian fungsional seperti pada function **simulation_createProduct_isCorrect(ChromeDriver driver)**
+terdapat penggunaan duplikasi code yang digunakan untuk memeriksa detail produk dan jumlah product dalam daftar. Solusi yang bisa dilakukan yaitu dengan
+membuat methode untuk baris kode yang serupa.
+'''
+</details>
 
