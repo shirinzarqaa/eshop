@@ -1,6 +1,7 @@
 <details>
 <summary>Tutorial 1</summary>
-## Reflection 1
+  
+**Reflection 1**
 '''
 pada pengembangan fitur saya sudah menerapkan standarisasi clean code mulai dari menggunakan 
 nama variabel dan metode yag deskriptif, memecah kode menjadi komponen modular dan menerapkan 
@@ -10,7 +11,7 @@ Namun pada saat pengembangan fitur delete thymeleaf saya tidak bisa mendeteksi m
 menambahkan konfigurasi **spring.mvc.hiddenmethod.filter.enabled=true** pada berkas **application.properties**
 agar fitur tersebut dapat berfungsi dengan baik.
 '''
-## Reflection 2
+**Reflection 2**
 '''
 Setelah menulis unit test, saya merasa kode saya menjadi berfungsi sesuai dengan bagaimana mestinya kode tersebut
 harus berjalan karena saya bisa mengetahui bug tersebut secara lebih awal dan dapat memperbaikinya sebelum error-error
