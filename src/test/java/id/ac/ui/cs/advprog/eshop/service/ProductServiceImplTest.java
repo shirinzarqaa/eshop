@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 
 @SpringBootTest
-public class ProductServiceImplTest {
+class ProductServiceImplTest {
 
     @InjectMocks
     private ProductServiceImpl productService;
@@ -23,7 +23,7 @@ public class ProductServiceImplTest {
     private ProductRepository productRepository;
 
     @Test
-    public void testCreateProduct() {
+    void testCreateProduct() {
         Product product = new Product();
         when(productRepository.create(product)).thenReturn(product);
         Product createdProduct = productService.create(product);
@@ -32,14 +32,14 @@ public class ProductServiceImplTest {
     }
 
     @Test
-    public void testDeleteProduct() {
+    void testDeleteProduct() {
         String productId = "1";
         productService.delete(productId);
         verify(productRepository, times(1)).delete(productId);
     }
 
     @Test
-    public void testEditProduct() {
+    void testEditProduct() {
         Product editedProduct = new Product();
         when(productRepository.edit(editedProduct)).thenReturn(editedProduct);
         Product result = productService.edit(editedProduct);
@@ -48,7 +48,7 @@ public class ProductServiceImplTest {
     }
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         String productId = "1";
         Product expectedProduct = new Product();
         when(productRepository.findById(productId)).thenReturn(expectedProduct);
@@ -58,7 +58,7 @@ public class ProductServiceImplTest {
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         List<Product> productList = Arrays.asList(
                 new Product(),
                 new Product()
