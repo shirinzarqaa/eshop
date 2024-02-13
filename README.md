@@ -11,4 +11,17 @@ Setelah menulis unit test, saya merasa kode saya menjadi berfungsi sesuai dengan
 
 Setelah saya meninjau kode dari file **CreateProductFunctionalTest.java** saya menyadari bahwa masih terdapat kode yang tidak menerapkan prinsip clean code karena kesamaan pengujian fungsional seperti pada function **simulation_createProduct_isCorrect(ChromeDriver driver)** terdapat penggunaan duplikasi code yang digunakan untuk memeriksa detail produk dan jumlah product dalam daftar. Solusi yang bisa dilakukan yaitu dengan membuat methode untuk baris kode yang serupa.
 </details>
+<details>
+<summary>Tutorial 2</summary>
+
+my app url : https://eshop-shirin-shirin.koyeb.app/product/list
+  
+# **Reflection 1**
+i have three issue 
+1. Unnecessary modifier "public" on method , di resolvenya dengan cara meremove public modifier.
+2. Swap these 2 arguments so they are in the correct order: expected value, actual value, di resolve dengan cara swap 2 argument dalam assertEquals. 
+# **Reflection 2**
+Saya menggunakan GitHub Action untuk menjalankan workflow yang saya buat, seperti ci.yml, scorecard.yml, dan sonarcloud.yml. Workflow yang disebutkan tersebut berjalan secara otomatis ketika ada push atau pull request ke suatu branch, sehingga saya telah berhasil menerapkan continuous integration (CI). Selain itu, untuk continuous deployment (CD), saya memanfaatkan platform Koyeb. Platform ini bekerja otomatis dengan men-deploy aplikasi saya setiap kali terjadi push atau pull request ke suatu branch. Gabungan CI/CD ini memberikan keuntungan dalam otomatisasi proses pengujian dan penyebaran aplikasi, meningkatkan efisiensi pengembangan dan keandalan aplikasi secara keseluruhan. Dengan implementasi ini, tim dapat lebih fokus pada pengembangan fitur dan perbaikan tanpa harus terlalu khawatir tentang proses pengujian dan deployment yang memakan waktu.
+  
+</details>
 
