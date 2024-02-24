@@ -24,4 +24,27 @@ i have three issue
 Saya menggunakan GitHub Action untuk menjalankan workflow yang saya buat, seperti ci.yml, scorecard.yml, dan sonarcloud.yml. Workflow yang disebutkan tersebut berjalan secara otomatis ketika ada push atau pull request ke suatu branch, sehingga saya telah berhasil menerapkan continuous integration (CI). Selain itu, untuk continuous deployment (CD), saya memanfaatkan platform Koyeb. Platform ini bekerja otomatis dengan men-deploy aplikasi saya setiap kali terjadi push atau pull request ke suatu branch. Gabungan CI/CD ini memberikan keuntungan dalam otomatisasi proses pengujian dan penyebaran aplikasi, meningkatkan efisiensi pengembangan dan keandalan aplikasi secara keseluruhan. Dengan implementasi ini, tim dapat lebih fokus pada pengembangan fitur dan perbaikan tanpa harus terlalu khawatir tentang proses pengujian dan deployment yang memakan waktu.
   
 </details>
+<details>
+<summary>Tutorial 3</summary>
+  
+1. Explain what principles you apply to your project!
+   1. single Responsibility Principle (SRP) memisahkan CarController pada pada productController ke file baru yaitu CarController.java.
+   2. Liskov Substitution Principle (LSP) model car extends dari model product dan di model car menambahkan carColor.
+   3. Liskov Substitution Principle (LSP) and Interface Segregation Principle (ISP) Membuat satu interface yaitu ProductService dengan type generic setelah itu CarServiceImpl dan ProductServiceImpl extends Product Service.
+   4. Dependency Inversion Principle (DIP) yaitu dengan membuat abstraksiRepository dan carRepository, ProductRepository Extends AbstractRepository
+2. Explain the advantages of applying SOLID principles to your project with examples.
+   1. SRP : meningkatkan keterbacaan kode.
+      contoh : memisahkan suatu file CarController dan ProductController.
+   2. LSP : Memastikan kekonsistensian dalam menggunakan kelas turunan.
+      contoh : Car model extend dari Product model dengan nambahin color di car model.
+   3. ISP : menghindari implementasi yang tidak relevan pada kelas kelas yg ngga membutuhkannya.
+      contoh : pengunaan interface pada productService dan CarServiceImpl,ProductServiceImpl mengimplementasi interface tsb.
+   4. DIP : meningkatkan fleksibilitas dan mudahnya penggantian implementasi
+      dengan nambahin abstractRepository class, productRepository dan CarRepository nge Extends.
+3. Explain the disadvantages of not applying SOLID principles to your project with examples.
+   1. SRP : kesulitan pemeliharaan kalo misalnya ngga gunain SRP soalnya bingung bug nya dimana kalo digabung gabung.
+      contoh : seperti kode pada before solid saat CarController dan ProductController dalam 1 file.
+   Selain itu, kode bisa jadi ngga flexible dan extensible karena ga gunain LSP sama ISP contohnya di LSP kita mau menambahkan suatu implementasi karena implementasi yang ada sangat spesifik makanya ngga bisa dimodifikasi.
+</details>
+
 
