@@ -5,15 +5,16 @@ import id.ac.ui.cs.advprog.eshop.model.Product;
 import java.util.List;
 
 
-public interface ProductService {
-  public Product create(Product product);
+public interface ProductService<T extends Product> {
+  public T create(T product);
 
 
-  public List<Product> findAll();
+  public List<T> findAll();
 
   public void delete(String productId);
 
-  public Product edit(Product product);
 
-  public Product findById(String productId);
+  T find(String productId);
+
+  public T update(String productId,  T product);
 }

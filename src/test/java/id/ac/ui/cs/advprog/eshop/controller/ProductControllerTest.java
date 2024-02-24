@@ -40,7 +40,7 @@ class ProductControllerTest {
 
     @Test
     void testCreateProductPost(){
-        String createPost = controller.createProductPost(product, model);
+        String createPost = controller.createProductPost(product);
 
 
         assertEquals("redirect:list",createPost);

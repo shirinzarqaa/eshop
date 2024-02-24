@@ -1,7 +1,7 @@
 package id.ac.ui.cs.advprog.eshop.controller;
 
-import id.ac.ui.cs.advprog.eshop.model.Product;
-import id.ac.ui.cs.advprog.eshop.service.ProductService;
+import id.ac.ui.cs.advprog.eshop.model.*;
+import id.ac.ui.cs.advprog.eshop.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class ProductController {
 
 
   @Autowired
-  private ProductService service;
+  private ProductServiceImpl service;
 
 
   @GetMapping("/create")
@@ -38,19 +38,19 @@ public class ProductController {
   public String productListPage(Model model) {
     List<Product> allProducts = service.findAll();
     model.addAttribute("products", allProducts);
-    return "productList";
+    return "ListProduct";
   }
 
   @GetMapping("/edit/{productId}")
   public String editProductPage(@PathVariable("productId") String productId, Model model) {
-    Product product = service.findById(productId);
+    Product product = service.find(productId);
     model.addAttribute("product", product);
     return "editProduct";
   }
 
   @PutMapping("/edit")
   public String editProductPost(@ModelAttribute Product product) {
-    service.edit(product);
+    service.update(product.getId().toString(),product);
     return "redirect:list";
   }
   @DeleteMapping("/delete/{productId}")

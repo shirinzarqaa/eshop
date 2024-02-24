@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Service
-public class CarServiceImpl implements CarService {
+public class CarServiceImpl implements ProductService<Car>{
     @Autowired
     private CarRepository carRepository;
 
@@ -23,25 +23,25 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> findAll() {
         Iterator<Car> carIterator = carRepository.findAll();
-        List<Car> allCar = new ArrayList<>();
+        List<Car> allCar = new ArrayList<Car>();
         carIterator.forEachRemaining(allCar::add);
         return allCar;
     }
 
     @Override
-    public Car findById(String carId) {
-        Car car = carRepository.findById(carId);
+    public Car find(String carId) {
+        Car car = carRepository.find(carId);
         return car;
     }
 
     @Override
-    public void update(String carId, Car car) {
+    public Car update(String carId, Car car) {
         // TODO Auto-generated method stub
-        carRepository.update(carId, car);
+        return carRepository.update(carId, car);
     }
 
     @Override
-    public void deleteCarById(String carId) {
+    public void delete(String carId) {
         // TODO Auto-generated method stub
         carRepository.delete(carId);
     }
