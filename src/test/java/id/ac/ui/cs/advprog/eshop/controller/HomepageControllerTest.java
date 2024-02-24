@@ -17,6 +17,6 @@ class HomepageControllerTest {
     @Test
     void testHomepage(){
         String homepage = controller.homepage();
-        assertEquals("homepage", homepage);
+        assertEquals("Homepage", homepage);
     }
 }
