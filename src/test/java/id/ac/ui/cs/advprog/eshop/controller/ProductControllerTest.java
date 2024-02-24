@@ -28,13 +28,13 @@ class ProductControllerTest {
         when(service.findById(String.valueOf(0))).thenReturn(new Product());
 
         String editProduct = controller.editProductPage(String.valueOf(0),model);
-        assertEquals( "editProduct", editProduct);
+        assertEquals( "EditProduct", editProduct);
     }
 
     @Test
     void testCreateProductPage() {
         String createProduct = controller.createProductPage(model);
-        assertEquals("createProduct",createProduct);
+        assertEquals("CreateProduct",createProduct);
 
     }
 

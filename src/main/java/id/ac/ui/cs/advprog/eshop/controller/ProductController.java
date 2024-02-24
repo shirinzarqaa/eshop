@@ -24,7 +24,7 @@ public class ProductController {
   public String createProductPage(Model model) {
     Product product = new Product();
     model.addAttribute("product", product);
-    return "createProduct";
+    return "CreateProduct";
   }
 
 
@@ -45,7 +45,7 @@ public class ProductController {
   public String editProductPage(@PathVariable("productId") String productId, Model model) {
     Product product = service.find(productId);
     model.addAttribute("product", product);
-    return "editProduct";
+    return "EditProduct";
   }
 
   @PutMapping("/edit")
