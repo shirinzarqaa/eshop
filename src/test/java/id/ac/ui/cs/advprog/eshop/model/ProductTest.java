@@ -12,23 +12,23 @@ class ProductTest {
     @BeforeEach
     void setUp() {
         this.product = new Product();
-        this.product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
-        this.product.setProductName("Product 1");
-        this.product.setProductQuantity(100);
+        this.product.setId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        this.product.setName("Product 1");
+        this.product.setQuantity(100);
     }
 
     @Test
     void testGetProductId() {
-        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", this.product.getProductId());
+        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", this.product.getId());
     }
 
     @Test
     void testGetProductName() {
-        assertEquals("Product 1", this.product.getProductName());
+        assertEquals("Product 1", this.product.getName());
     }
 
     @Test
     void testGetProductQuantity() {
-        assertEquals(100, this.product.getProductQuantity());
+        assertEquals(100, this.product.getQuantity());
     }
 }

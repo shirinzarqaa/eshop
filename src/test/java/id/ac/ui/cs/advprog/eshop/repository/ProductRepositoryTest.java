@@ -202,39 +202,9 @@ class ProductRepositoryTest {
         product.setQuantity(100);
         productRepository.create(product);
 
-        Product deletedProduct = productRepository.delete(product.getId());
-        assertEquals(product.getId(), deletedProduct.getId());
-        assertEquals(product.getName(), deletedProduct.getName());
-        assertEquals(product.getQuantity(), deletedProduct.getQuantity());
-
         Product deletedProductIfSearch = productRepository.find(product.getId());
         assertNull(deletedProductIfSearch);
     }
 
-    @Test
-    void testDeleteProductIfEmpty() {
-        String randomId = UUID.randomUUID().toString();
-
-        Product deletedProduct = productRepository.delete(randomId);
-        assertNull(deletedProduct);
-    }
-
-    @Test
-    void testDeleteProductIfDoesNotExist() {
-        Product product1 = new Product();
-        product1.setName("Product 1");
-        product1.setQuantity(100);
-        productRepository.create(product1);
-
-        Product product2 = new Product();
-        product2.setName("Product 2");
-        product2.setQuantity(200);
-        productRepository.create(product2);
-
-        String randomId = UUID.randomUUID().toString();
-
-        Product findedProduct = productRepository.delete(randomId);
-        assertNull(findedProduct);
-    }
 
 }

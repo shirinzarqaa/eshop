@@ -41,20 +41,21 @@ class ProductServiceImplTest {
     @Test
     void testEditProduct() {
         Product editedProduct = new Product();
-        when(productRepository.edit(editedProduct)).thenReturn(editedProduct);
-        Product result = productService.edit(editedProduct);
+        String productId = "1";
+        when(productRepository.update(productId,editedProduct)).thenReturn(editedProduct);
+        Product result = productService.update(productId,editedProduct);
         assertEquals(editedProduct, result);
-        verify(productRepository, times(1)).edit(editedProduct);
+        verify(productRepository, times(1)).update(productId,editedProduct);
     }
 
     @Test
     void testFindById() {
         String productId = "1";
         Product expectedProduct = new Product();
-        when(productRepository.findById(productId)).thenReturn(expectedProduct);
-        Product result = productService.findById(productId);
+        when(productRepository.find(productId)).thenReturn(expectedProduct);
+        Product result = productService.find(productId);
         assertEquals(expectedProduct, result);
-        verify(productRepository, times(1)).findById(productId);
+        verify(productRepository, times(1)).find(productId);
     }
 
     @Test
