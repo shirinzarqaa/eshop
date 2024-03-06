@@ -46,5 +46,19 @@ Saya menggunakan GitHub Action untuk menjalankan workflow yang saya buat, sepert
       contoh : seperti kode pada before solid saat CarController dan ProductController dalam 1 file.
    Selain itu, kode bisa jadi ngga flexible dan extensible karena ga gunain LSP sama ISP contohnya di LSP kita mau menambahkan suatu implementasi karena implementasi yang ada sangat spesifik makanya ngga bisa dimodifikasi.
 </details>
+<details>
+<summary>Tutorial 4</summary>
+1. TDD flow ini membantu saya dengan membuat alur pengembangan program menjadi lebih terarah karena saya menjadi tau apa saja yg harus include di implementasi nanti. Namun, saya mengalami kesulitan ketika membuat test seperti ada "argument was not thrown" padahal saya sudah mencantumkanya, setelah itu masih ada kebingungan dengan mock. Oleh karena itu saya merasa harus mempelajari lebih dalam
+2. 
+Fast: saya sudah memenuhi prinsip fast dengan memisahkan setiap test sehingga sehingga pengujian saya tidak bergantung pada pengujian lainnya.
+
+Isolated: saya sudah memenuhi prinsip isolasi. Penggunaan mock objects dan setUp untuk mencegah duplikasi objek sudah diimplementasikan.
+
+Repeatable: saya sudah memenuhi prinsip pengulangan. Dengan memastikan isolasi, setiap kali pengujian dilakukan, data yang digunakan di dalam test tetap konsisten.
+
+Self-Validating: saya hanya menggunakan assert untuk validasi hasil, Saya menyadari bahwa masih banyak test yang memiliki banyak assert di dalamnya. Untuk memenuhi prinsip ini lebih baik, saya harus memisahkan setiap assert ke dalam test yang berbeda.
+
+Thorough: Test saya sudah mencakup prinsip ini. Testnya mencakup semua kondisi happy dan unhappy, serta mencoba menginclude semua kemungkinan error.
+</details>
 
 
