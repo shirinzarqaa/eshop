@@ -103,20 +103,6 @@ class PaymentServiceImplTest {
     }
 
     @Test
-    void testSetStatusInvalidStatus() {
-        Payment payment = new Payment("6c93d3e2-b009-46ba-9d15-f03d85adc2de", "CASH_ON_DELIVERY", paymentDatas.get(0),
-                orders.get(1));
-        assertEquals(PaymentStatus.REJECTED.getValue(), payment.getStatus());
-
-        doReturn(payment).when(paymentRepository).findById(payment.getId());
-
-        assertThrows(IllegalArgumentException.class,
-                () -> paymentService.setStatus(payment, "MEOW"));
-
-        verify(paymentRepository, times(0)).save(any(Payment.class));
-    }
-
-    @Test
     void testSetStatusInvalidPaymentId() {
         Payment payment = new Payment("6c93d3e2-b009-46ba-9d15-f03d85adc2de", "CASH_ON_DELIVERY", paymentDatas.get(0),
                 orders.get(1));

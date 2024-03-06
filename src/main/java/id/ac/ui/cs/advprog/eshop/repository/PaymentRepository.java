@@ -1,10 +1,12 @@
 package id.ac.ui.cs.advprog.eshop.repository;
 
 import id.ac.ui.cs.advprog.eshop.model.Payment;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Repository
 public class PaymentRepository {
     private Map<String, Payment> paymentData = new HashMap<>();
 
