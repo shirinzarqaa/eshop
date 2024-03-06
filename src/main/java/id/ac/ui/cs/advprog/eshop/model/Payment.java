@@ -15,6 +15,7 @@ public class Payment {
     Order order;
 
     public Payment(String id, String method, Map<String, String> paymentData, Order order) {
+
     }
 
     public Payment(String id, String method, String status, Map<String, String> paymentData, Order order) {
